@@ -14,7 +14,7 @@ dotenv.config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const app=express();
-const port=process.env.PORT || 3000;
+const port=process.env.PORT || 1000;
 app.use(express.json());
 app.use(cors({
   origin: `${process.env.FRONTEND_URL}`,
@@ -58,7 +58,7 @@ app.get(`/`, async (req, res) => {
     let query = {};
     if (semester) query.sem = Number(semester)  ;
     const data = await User.find(query);
-      res.send(JSON.stringify(data));
+      res.send(JSON.stringifwy(data));
   } catch (err) {
     console.log("error fetching data from server/mongo",err);
   }
