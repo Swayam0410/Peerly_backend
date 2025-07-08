@@ -58,7 +58,7 @@ app.get(`/`, async (req, res) => {
     let query = {};
     if (semester) query.sem = Number(semester)  ;
     const data = await User.find(query);
-      res.send(JSON.stringifwy(data));
+      res.send(JSON.stringify(data));
   } catch (err) {
     console.log("error fetching data from server/mongo",err);
   }
